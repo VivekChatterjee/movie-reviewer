@@ -6,7 +6,7 @@ let result = document.getElementById("result");
 
 let getMovie = () => {
   let movie = movieName.value;
-  let url = `http://www.omdbapi.com/?t=${movie}&apikey=${key}`;
+  let url = `https://www.omdbapi.com/?t=${movie}&apikey=${key}`;
 
   if (movie.length <= 0) {
     result.innerHTML = `<h3 class="msg">Please enter a movie name </h3>`;
@@ -22,7 +22,6 @@ let getMovie = () => {
                         <img src=${data.Poster} class="poster">
                         <div>
                             <h2>${data.Title}</h2>
-                            
                             <div class="rating">
                                 <img src="star-icon.svg">
                                 <h4>${data.imdbRating}</h4>
@@ -50,7 +49,7 @@ let getMovie = () => {
         }
       })
       .catch(() => {
-        result.innerHTML = `<h3 class="msg">An Error Occured =</h3>`;
+        result.innerHTML = `<h3 class="msg">An Error Occured !!</h3>`;
       });
   }
 };
