@@ -1,6 +1,6 @@
 # Movie Reviewer
 
-### A web application to get a review on any movie/series through omdb API.
+### A web application to get a review on any movie/series through OMDB API.
 
 <div >
 <h2><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/High%20Voltage.png" alt="High Voltage" width="40" height="40" /><font size="6">Tech Stack</font></h2>
