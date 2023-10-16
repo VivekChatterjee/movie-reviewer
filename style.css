@@ -12,8 +12,8 @@ body {
 	background: linear-gradient(#1c1917 50%, #1ef 50%);
 	background-repeat: no-repeat;
 	background-size: contain;
-	overflow: auto;
-	padding: 1rem;
+
+	overflow: hidden;
 }
 
 .heading {
@@ -25,10 +25,9 @@ body {
 
 main {
 	height: 100vh;
-	overflow: auto;
 	display: flex;
 	justify-content: center;
-	padding: 1rem;
+	align-items: center;
 	position: relative;
 	align-items: center;
 }
@@ -50,6 +49,8 @@ main {
 	max-width: 37em;
 	padding: 3rem 1.8em;
 	border-radius: 0.6em;
+	max-height: 100vh;
+	overflow: auto;
 	box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
 }
 
