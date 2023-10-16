@@ -2,6 +2,7 @@ let movieName = document.getElementById("movie-name");
 let searchBtn = document.getElementById("search-btn");
 let result = document.getElementById("result");
 
+
 // fetching data from api
 
 let getMovie = () => {
@@ -54,4 +55,18 @@ let getMovie = () => {
   }
 };
 
+
+
 searchBtn.addEventListener("click", getMovie);
+
+// adding enter key press feature
+movieName.addEventListener("keyup", (e)=> {
+
+  if (e.keyCode === 13) {
+   
+   e.preventDefault()
+   getMovie()
+  }
+});
+
+
