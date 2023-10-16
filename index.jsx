@@ -18,16 +18,24 @@ let getMovie = () => {
 			})
 			.then((data) => {
 				if (data.Response == 'True') {
+					console.log(data);
 					result.innerHTML = `
             <div class="info">
-                        <img src=${data?.Poster} class="poster">
-                        <div >
+            <div class="poster-container">
+
+                        <img src=${data?.Poster} class="poster" srcset="${data.Poster} 320w,
+                        ${data.Poster} 640w,
+                        ${data.Poster} 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.3vw">
+                        </div>
+                        </div>
+
+
                           <div class='title-container'>
                             <h2>${data?.Title}</h2>
                             <div class="rating">
-                            <h4>${data?.Rated}</h4>
-                            <h4>${data?.Year}</h4>
-                            <h4>${data?.Runtime}</h4>
+                            <h4> ${data?.Rated}</h4>|
+                            <h4>${data?.Year}</h4>|
+                            <h4>${data?.Runtime}</h4>|
                              <img src="star-icon.svg">
                             <h4>${data?.imdbRating}</h4>
                           </div>
