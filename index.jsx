@@ -20,50 +20,44 @@ let getMovie = () => {
 				if (data.Response == 'True') {
 					console.log(data);
 					result.innerHTML = `
-            <div class="info">
-            <div class="poster-container">
-
-                        <img src=${data?.Poster} class="poster" srcset="${data.Poster} 320w,
-                        ${data.Poster} 640w,
-                        ${data.Poster} 1024w" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33.3vw">
-                        </div>
-                        </div>
-
-
-                          <div class='title-container'>
-                            <h2>${data?.Title}</h2>
-                            <div class="rating">
-                            <h4> ${data?.Rated}</h4>|
-                            <h4>${data?.Year}</h4>|
-                            <h4>${data?.Runtime}</h4>|
-                             <img src="star-icon.svg">
-                            <h4>${data?.imdbRating}</h4>
-                          </div>
-                        </div>
-                        <div class='details-container'>
-                            <h3>${data?.Genre.split(',').length > 1 ? 'Genres' : 'Genre'} :</h3>
-                            <div class="genre">
-                            <p>${data?.Genre.split(',').join('</p><p>')}</p>
-                            </div>
-                            </div>
-                        <div class='details-container'>
-                        <h3>${data?.Country.split(',').length > 1 ? 'Countries' : 'Country'} :</h3>
-                        <div class="details">
-                        <p>${data?.Country}</p>
-                        </div>
-                        </div>
-
-                        </div>
+              <div class="info">
+                <img src="${data?.Poster}" class="poster">
+                <div class='info-left'>
+                <div class='title-container'>
+                    <h2>${data?.Title}</h2>
+                    <div class="rating">
+                      <h4>${data?.Rated}</h4>|
+                      <h4>${data?.Year}</h4>|
+                      <h4>${data?.Runtime}</h4>|
+                      <img src="star-icon.svg">
+                      <h4>${data?.imdbRating}</h4>
                     </div>
-                    <div class='details-container'>
-                    <h3>Plot :</h3>
-                    <p>${data?.Plot}</p>
-                    </div>
-                    <div class='details-container'>
-                    <h3>Cast :</h3>
-                    <p>${data?.Actors}</p>
-                    </div>
-          `;
+                  </div>
+                  <div class='details-container'>
+                  <h3>${data?.Genre.split(',').length > 1 ? 'Genres' : 'Genre'} :</h3>
+                  <div class="genre">
+                  <div>${data.Genre.split(',').join('</div><div>')}</div>
+                  </div>
+                </div>
+                <div class='details-container'>
+                  <h3>${data?.Country.split(',').length > 1 ? 'Countries' : 'Country'} :</h3>
+                  <div class="details">
+                    ${data?.Country.split(',').join(',')}
+
+                  </div>
+                </div>
+                </div>
+              </div>
+
+              <div class='details-container'>
+                <h3>Plot :</h3>
+                <p>${data?.Plot}</p>
+              </div>
+              <div class='details-container'>
+                <h3>Cast :</h3>
+                <p>${data?.Actors}</p>
+              </div>
+            `;
 				} else {
 					result.innerHTML = `<h3 class="msg">${data?.Error}</h3>`;
 				}
