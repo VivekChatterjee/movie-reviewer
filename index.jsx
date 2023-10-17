@@ -1,8 +1,8 @@
 let movieName = document.getElementById('movie-name');
 let searchBtn = document.getElementById('search-btn');
 let result = document.getElementById('result');
-
-console.log(key);
+let container = document.querySelector('.container')
+let loader = document.querySelector('.loader')
 // fetching data from api
 
 let getMovie = () => {
@@ -12,13 +12,16 @@ let getMovie = () => {
 	if (movie.length <= 0) {
 		result.innerHTML = `<h3 class="msg">Please enter a movie name </h3>`;
 	} else {
+    container.classList.add('make-darker')
+    loader.classList.remove('hidden')
 		fetch(url)
 			.then((response) => {
 				return response.json();
 			})
 			.then((data) => {
 				if (data.Response == 'True') {
-					console.log(data);
+          container.classList.remove('make-darker')
+          loader.classList.add('hidden')
 					result.innerHTML = `
               <div class="info">
                 <img src="${data?.Poster}" class="poster">
