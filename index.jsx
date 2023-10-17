@@ -19,9 +19,9 @@ let getMovie = () => {
 				return response.json();
 			})
 			.then((data) => {
+        container.classList.remove('make-darker')
+        loader.classList.add('hidden')
 				if (data.Response == 'True') {
-          container.classList.remove('make-darker')
-          loader.classList.add('hidden')
 					result.innerHTML = `
               <div class="info">
                 <img src="${data?.Poster}" class="poster">
@@ -66,6 +66,8 @@ let getMovie = () => {
 				}
 			})
 			.catch(() => {
+        container.classList.remove('make-darker')
+        loader.classList.add('hidden')
 				result.innerHTML = `<h3 class="msg">An Error Occured !!</h3>`;
 			});
 	}
