@@ -74,10 +74,13 @@ searchBtn.addEventListener('click', function(){
 
 });
 
+
+
 // adding enter key press feature
 movieName.addEventListener('keyup', (e) => {
 	if (e.keyCode === 13) {
 		e.preventDefault();
 		getMovie();
+    movieName.value = "";
 	}
 });
