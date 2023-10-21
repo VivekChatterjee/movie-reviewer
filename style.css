@@ -12,7 +12,7 @@ body {
 	background: linear-gradient(#1c1917 50%, #1ef 50%);
 	background-repeat: no-repeat;
 	background-size: contain;
-
+	padding: 23px 23px;
 	overflow: hidden;
 }
 
@@ -24,7 +24,8 @@ body {
 }
 
 main {
-	height: 100vh;
+	height: 94vh; 
+	/* Changed the height to display the container at the centre in column direction  */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -110,6 +111,8 @@ main {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap; 
+	/* Change this to flex wrap to display the movie ratings,time properly for smaller devices */
 }
 
 h2 {
@@ -194,6 +197,13 @@ p {
 	.container {
 		font-size: 14px;
 		width: 96vw;
+		height: 90vh;
+		/* Change the height to enhance the look i.e the container will not stick to the top and bottom anymore  */
+		
+	}
+	#country{
+		justify-content: flex-start;
+		/* Changed this as the country name and and country title was getting displayed on two separate rows  for smaller devices  */
 	}
 
 	.poster {
