@@ -44,7 +44,7 @@ let getMovie = () => {
                 </div>
                 <div class='details-container'>
                   <h3>${data?.Country.split(',').length > 1 ? 'Countries' : 'Country'} :</h3>
-                  <div class="details">
+                  <div class="details" id="country">
                     ${data?.Country.split(',').join(',')}
 
                   </div>
