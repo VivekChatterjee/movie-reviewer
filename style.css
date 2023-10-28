@@ -8,12 +8,16 @@
 }
 
 body {
-  height: 100vh;
-  background: linear-gradient(#1c1917 50%, #1ef 50%);
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 23px 23px;
-  overflow: hidden;
+	height: 100vh;
+	background: #111;
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding: 23px 23px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
 }
 
 .heading {
@@ -21,16 +25,6 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-}
-
-main {
-  height: 94vh;
-  /* Changed the height to display the container at the centre in column direction  */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  align-items: center;
 }
 
 .container::-webkit-scrollbar {
@@ -43,18 +37,18 @@ main {
 }
 
 .container {
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  background-color: #1e293b;
-  position: absolute;
-  width: 90vw;
-  max-width: 37em;
-  padding: 3rem 1.8em;
-  border-radius: 0.6em;
-  max-height: 100vh;
-  overflow: auto;
-  box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	background-color: #04364A;
+	position: absolute;
+	width: 90vw;
+	max-width: 37em;
+	padding: 3rem 1.8em;
+	border-radius: 0.6em;
+	max-height: 100vh;
+	overflow: auto;
+	box-shadow: 1.2em 2em 3em rgba(0, 0, 0, 0.2);
 }
 
 #search-btn:not([disabled]):hover {
@@ -260,5 +254,53 @@ p {
 }
 
 .hidden {
-  display: none;
+	display: none;
+}
+
+.bgAnimation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(20, 1fr);
+	grid-template-rows: repeat(20, 1fr);
+	background: #1d1d1d;
+	filter: saturate(2);
+	overflow: hidden;
+}
+
+.colorBox {
+	z-index: 2;
+	filter: brightness(1.1);
+	transition: 2s ease;
+	position: relative;
+	margin: 2px;
+	background: #1d1d1d;
+}
+
+.colorBox:hover {
+	background: #176B87;
+	transition-duration: 0s;
+}
+
+.backgroundAnim {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background: #176B87;
+	filter: blur(60px);
+	animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+	0% {
+		top: -60px;
+	}
+	100% {
+		top: 120%;
+	}
 }
