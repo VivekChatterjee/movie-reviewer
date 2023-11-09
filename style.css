@@ -191,6 +191,29 @@ p {
   text-align: center;
 }
 
+/* Mobile (Portrait Mode): max-width: 480px */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 16px 16px;
+    margin: 0 auto;
+    font-size: 12px;
+    width: 100%;
+    height: auto;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  .search-container {
+    display: flex;
+    flex-direction: column;
+  }
+  #search-btn {
+    width: 40%;
+    margin: 0 auto;
+    padding: 6px 0;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     font-size: 14px;
@@ -201,6 +224,9 @@ p {
   #country {
     justify-content: flex-start;
     /* Changed this as the country name and and country title was getting displayed on two separate rows  for smaller devices  */
+  }
+  h1 {
+    font-size: 24px;
   }
 
   .poster {
@@ -236,7 +262,9 @@ p {
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
   position: absolute;
+  z-index: 999;
   left: 48%;
+  top: 50%;
   transform: translateX(-50%);
 }
 
